@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Dice Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+    <div class="container">
+        <header>
+            <h1>3D Dice Game</h1>
+            <p class="subtitle">3人で5ラウンド勝負！合計スコアが一番高い人が勝ち！</p>
+        </header>
+
+        <main>
+            <div class="dice-container">
+                <div class="scene">
+                    <div class="cube" id="dice1">
+                        <div class="cube__face cube__face--1"><span class="dot"></span></div>
+                        <div class="cube__face cube__face--2"><span class="dot"></span><span class="dot"></span></div>
+                        <div class="cube__face cube__face--3"><span class="dot"></span><span class="dot"></span><span
+                                class="dot"></span></div>
+                        <div class="cube__face cube__face--4"><span class="dot"></span><span class="dot"></span><span
+                                class="dot"></span><span class="dot"></span></div>
+                        <div class="cube__face cube__face--5"><span class="dot"></span><span class="dot"></span><span
+                                class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <div class="cube__face cube__face--6"><span class="dot"></span><span class="dot"></span><span
+                                class="dot"></span><span class="dot"></span><span class="dot"></span><span
+                                class="dot"></span></div>
+                    </div>
+                </div>
+                <div class="scene">
+                    <div class="cube" id="dice2">
+                        <div class="cube__face cube__face--1"><span class="dot"></span></div>
+                        <div class="cube__face cube__face--2"><span class="dot"></span><span class="dot"></span></div>
+                        <div class="cube__face cube__face--3"><span class="dot"></span><span class="dot"></span><span
+                                class="dot"></span></div>
+                        <div class="cube__face cube__face--4"><span class="dot"></span><span class="dot"></span><span
+                                class="dot"></span><span class="dot"></span></div>
+                        <div class="cube__face cube__face--5"><span class="dot"></span><span class="dot"></span><span
+                                class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <div class="cube__face cube__face--6"><span class="dot"></span><span class="dot"></span><span
+                                class="dot"></span><span class="dot"></span><span class="dot"></span><span
+                                class="dot"></span></div>
+                    </div>
+                </div>
+                <div class="scene" id="scene3" style="display: none;">
+                    <div class="cube" id="dice3">
+                        <div class="cube__face cube__face--1"><span class="dot"></span></div>
+                        <div class="cube__face cube__face--2"><span class="dot"></span><span class="dot"></span></div>
+                        <div class="cube__face cube__face--3"><span class="dot"></span><span class="dot"></span><span
+                                class="dot"></span></div>
+                        <div class="cube__face cube__face--4"><span class="dot"></span><span class="dot"></span><span
+                                class="dot"></span><span class="dot"></span></div>
+                        <div class="cube__face cube__face--5"><span class="dot"></span><span class="dot"></span><span
+                                class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <div class="cube__face cube__face--6"><span class="dot"></span><span class="dot"></span><span
+                                class="dot"></span><span class="dot"></span><span class="dot"></span><span
+                                class="dot"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="turn-display-container" style="text-align: center; margin-bottom: 1rem;">
+                <h2 id="turn-display"
+                    style="color: #a5b4fc; font-size: 1.8rem; text-shadow: 0 0 10px rgba(165, 180, 252, 0.5);">準備中...
+                </h2>
+            </div>
+
+            <div class="controls">
+                <button id="roll-button" class="btn-primary">サイコロを振る</button>
+                <button id="reset-button" class="btn-primary hidden"
+                    style="margin-left: 10px; background: linear-gradient(135deg, #10b981, #059669);">もう一度遊ぶ</button>
+            </div>
+
+            <div class="result-display">
+                <h2 id="current-result" class="hidden"></h2>
+            </div>
+
+            <div class="stats-board" id="ranking-board">
+                <div class="stat-card" id="rank-card-1">
+                    <h3>1位 <span class="rank-name" id="rank-1-name"
+                            style="color: #fbbf24; margin-left: 5px; font-size: 1.1rem;">-</span></h3>
+                    <p id="rank-1-score">0</p>
+                </div>
+                <div class="stat-card" id="rank-card-2">
+                    <h3>2位 <span class="rank-name" id="rank-2-name"
+                            style="color: #94a3b8; margin-left: 5px; font-size: 1.1rem;">-</span></h3>
+                    <p id="rank-2-score">0</p>
+                </div>
+                <div class="stat-card" id="rank-card-3">
+                    <h3>3位 <span class="rank-name" id="rank-3-name"
+                            style="color: #b45309; margin-left: 5px; font-size: 1.1rem;">-</span></h3>
+                    <p id="rank-3-score">0</p>
+                </div>
+            </div>
+
+            <div class="history-panel">
+                <h3>プレイヤー勝率</h3>
+                <ul id="history-list">
+                </ul>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
